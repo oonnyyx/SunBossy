@@ -1,0 +1,141 @@
+# SunBossy — ustawienia bossów.
+# Nagrody to komendy z konsoli: {player} = nick. Dzielone wg zadanych obrażeń:
+#   wszyscy = każdy, kto zadał min. 3% obrażeń; top3 = trzej najlepsi (dodatkowo); top1 = najlepszy (dodatkowo).
+
+bossy:
+  straznik:
+    nazwa: "Strażnik Słońca"
+    zycie-bazowe: 800
+    zycie-na-gracza: 350
+    nagrody:
+      wszyscy:
+        - "skrzynki give {player} gornicza 1"
+        - "experience add {player} 15 levels"
+      top3:
+        - "skrzynki give {player} wojenna 1"
+      top1:
+        - "skrzynki give {player} mityczna 1"
+    event:
+      # Automatyczny event: boss przychodzi sam na arenę pierwszego ołtarza (ogłoszenia 5 min i 1 min wcześniej).
+      wlaczony: true
+      co-ile-godzin: 3
+      min-graczy-online: 1
+    # Czas odnowienia ołtarza po walce (minuty)
+    oltarz-cooldown-minut: 20
+
+  smok:
+    nazwa: "Smok Burzy"
+    zycie-bazowe: 900
+    zycie-na-gracza: 350
+    nagrody:
+      wszyscy:
+        - "skrzynki give {player} gornicza 1"
+        - "experience add {player} 15 levels"
+      top3:
+        - "skrzynki give {player} wojenna 1"
+      top1:
+        - "skrzynki give {player} mityczna 1"
+    event:
+      # Smok przylatuje nad arenę pierwszego ołtarza smoka.
+      wlaczony: true
+      co-ile-godzin: 4
+      min-graczy-online: 1
+    oltarz-cooldown-minut: 25
+
+  kraken:
+    nazwa: "Kraken Pustki"
+    zycie-bazowe: 1000
+    zycie-na-gracza: 380
+    nagrody:
+      wszyscy:
+        - "skrzynki give {player} gornicza 1"
+        - "experience add {player} 15 levels"
+      top3:
+        - "skrzynki give {player} wojenna 1"
+      top1:
+        - "skrzynki give {player} mityczna 1"
+    event:
+      # Ołtarz krakena: arena = krawędź wyspy, ustawiając patrz w pustkę (stamtąd się wynurza).
+      wlaczony: true
+      co-ile-godzin: 5
+      min-graczy-online: 1
+    oltarz-cooldown-minut: 25
+
+  organista:
+    nazwa: "Organista Pustki"
+    zycie-bazowe: 1100
+    zycie-na-gracza: 400
+    # Bez automatycznego eventu: przywołanie tylko komendą /bossy przywolaj organista.
+    # „NN%: komenda” = szansa; „{losowo:a|b|c}” = jedna losowa opcja.
+    nagrody:
+      wszyscy:
+        - "skrzynki give {player} gornicza 1"
+        - "experience add {player} 20 levels"
+        - "8%: eventowki daj {player} {losowo:ostrze_pustki|sztylet_cienia|kosa_dusz} Loch Pustki"
+      top3:
+        - "skrzynki give {player} wojenna 1"
+      top1:
+        - "skrzynki give {player} mityczna 1"
+        - "60%: eventowki daj {player} {losowo:ostrze_pustki|sztylet_cienia|kosa_dusz} Loch Pustki"
+    event:
+      wlaczony: false
+      co-ile-godzin: 6
+      min-graczy-online: 1
+    oltarz-cooldown-minut: 30
+
+  kowal:
+    nazwa: "Kowal Burzowej Kuźni"
+    zycie-bazowe: 1000
+    zycie-na-gracza: 380
+    nagrody:
+      wszyscy:
+        - "skrzynki give {player} gornicza 1"
+        - "experience add {player} 15 levels"
+      top3:
+        - "skrzynki give {player} wojenna 1"
+      top1:
+        - "skrzynki give {player} mityczna 1"
+    event:
+      # Kowal wychodzi z ziemi na arenie ołtarza (płaska arena ~14 kratek promienia — kuźnia pali wycinki wokół niej).
+      wlaczony: true
+      co-ile-godzin: 4
+      min-graczy-online: 1
+    oltarz-cooldown-minut: 25
+
+  wilk:
+    nazwa: "Lodowy Wilk Alfa"
+    zycie-bazowe: 850
+    zycie-na-gracza: 330
+    nagrody:
+      wszyscy:
+        - "skrzynki give {player} gornicza 1"
+        - "experience add {player} 15 levels"
+      top3:
+        - "skrzynki give {player} wojenna 1"
+      top1:
+        - "skrzynki give {player} mityczna 1"
+    event:
+      # Wilk skacze do 20 kratek od areny — najlepiej kilka wysepek blisko siebie.
+      wlaczony: true
+      co-ile-godzin: 4
+      min-graczy-online: 1
+    oltarz-cooldown-minut: 25
+
+  krolowa:
+    nazwa: "Królowa Roju"
+    zycie-bazowe: 950
+    zycie-na-gracza: 360
+    nagrody:
+      wszyscy:
+        - "skrzynki give {player} gornicza 1"
+        - "experience add {player} 15 levels"
+      top3:
+        - "skrzynki give {player} wojenna 1"
+      top1:
+        - "skrzynki give {player} mityczna 1"
+    event:
+      # Ul staje 7 kratek ZA areną (za plecami ustawiającego ołtarz) — tam musi być grunt.
+      wlaczony: true
+      co-ile-godzin: 5
+      min-graczy-online: 1
+    oltarz-cooldown-minut: 25

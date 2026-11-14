@@ -1,0 +1,16 @@
+name: SunBossy
+version: '${project.version}'
+main: pl.onyxdev.bossy.SunBossy
+api-version: '26.2'
+author: oonnyyx
+depend: [SunCore]
+description: Bossowie SunCraftMC z display entities — ołtarze, eventy, nagrody wg obrażeń
+commands:
+  bossy:
+    description: Bossowie (admin)
+    aliases: [boss]
+    usage: /bossy [przywolaj|oltarz|usun-oltarz|przedmiot|event|zabij|lista]
+permissions:
+  bossy.admin:
+    description: Przywoływanie bossów, ołtarze, eventy
+    default: op
